@@ -32,16 +32,17 @@ button:hover {
 
 <center><h1>Please enable popups for the site to work properly.</h1>
 
-<button onclick="rickrollTimeout()">Start!</button>
+<button onclick="rickrollTimeout()" id="remove">Start!</button>
 <h1 id="write"></h1></center>
 
 <script>
 function openRickRoll() {
 	window.open("https://www.youtube.com/watch?v=FRsyA1vn3DM", '_blank', 'width=' + screen.width + ',height=' + screen.height);
-    } /* get rickrolled */
+    }
 function rickrollTimeout() {
   document.getElementById("write").innerHTML = "Leave this site on please!";
-  setInterval(openRickRoll, 60000);
+  document.getElementById("remove").outerHTML = "";
+  setInterval(openRickRoll, 30000);
 }
 </script>
 
