@@ -12,8 +12,9 @@ video.setAttribute('width', screen.width);
   function delay(t){return new Promise(e=>setTimeout(e,t))}
   async function main() {
 for (;;) {
-  try {video.play();return;}
-  catch {}
+  let errored = false;
+  video.play().catch(function() {errored=true});
+  if (!errored) return;
   await delay(1);
 }}main();
 </script>
