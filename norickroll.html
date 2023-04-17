@@ -9,7 +9,13 @@ window.onbeforeunload = function() { return "Maybe listen to the song for a whil
 var video = document.getElementsByTagName("video")[0];
 video.setAttribute('height', screen.height);
 video.setAttribute('width', screen.width);
-video.play();
+  function delay(t){return new Promise(e=>setTimeout(e,t))}
+  async function main() {
+for (;;) {
+  try {video.play();return;}
+  except {}
+  await delay(1);
+}}main();
 </script>
 </body>
 </html>
